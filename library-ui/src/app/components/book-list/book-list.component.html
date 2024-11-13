@@ -1,0 +1,64 @@
+<!-- /app/components/book-list/book-list.component.html// -->
+<div class="book-list-container">
+  <!-- Borrow Details Button -->
+  <!-- src/app/components/book-list/book-list.component.html -->
+<button routerLink="/borrow-details" class="borrow-details-btn">Borrower Details</button>
+
+
+  <!-- Book List Header -->
+  <h2 class="heading">Library Management</h2>
+
+  <!-- Books Container -->
+  <div class="books-container">
+    <div *ngFor="let book of books" class="book-card">
+      <img [src]="'assets/images/' + book.imageUrl" alt="{{ book.title }}" class="book-image" />
+      <div class="book-details">
+        <h3 class="book-title">{{ book.title }}</h3>
+        <p class="book-author">by {{ book.author }}</p>
+        <p class="book-category">Category: {{ book.category }}</p>
+        <p class="book-year">Published Year: {{ book.publishedYear }}</p>
+      </div>
+    </div>
+  </div>
+  
+
+
+ <!-- src/app/components/book-list/book-list.component.html -->
+<!-- <div class="book-list-container">
+  <button class="borrow-details-btn" routerLink="/borrow-details">Borrow Details</button>
+
+  <div class="book-list">
+    <h2>Library Book List</h2>
+    <table mat-table [dataSource]="books" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> ID </th>
+        <td mat-cell *matCellDef="let book">{{ book.id }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title </th>
+        <td mat-cell *matCellDef="let book">{{ book.title }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="author">
+        <th mat-header-cell *matHeaderCellDef> Author </th>
+        <td mat-cell *matCellDef="let book">{{ book.author }}</td>
+      </ng-container>
+  
+      <ng-container matColumnDef="year">
+        <th mat-header-cell *matHeaderCellDef> Published Year </th>
+        <td mat-cell *matCellDef="let book">{{ book.publishedYear }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef> Image </th>
+        <td mat-cell *matCellDef="let book">
+          <img [src]="'assets/images/' + book.imageName" alt="{{ book.title }}" width="100" height="150">
+        </td>
+      </ng-container>
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+</div> -->

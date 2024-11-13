@@ -1,0 +1,46 @@
+<p>book-add works!</p>
+<!-- <div class="book-add">
+    <h2>Add a New Book</h2>
+    <form (ngSubmit)="addBook()">
+      <label for="title">Title:</label>
+      <input type="text" id="title" [(ngModel)]="bookTitle" name="title" required>
+  
+      <label for="author">Author:</label>
+      <input type="text" id="author" [(ngModel)]="bookAuthor" name="author" required>
+  
+      <label for="year">Published Year:</label>
+      <input type="number" id="year" [(ngModel)]="bookYear" name="year" required>
+  
+      <label for="imageUrl">Image URL:</label>
+      <input type="text" id="imageUrl" [(ngModel)]="bookImageUrl" name="imageUrl" required>
+  
+      <button type="submit" [disabled]="!bookTitle || !bookAuthor || !bookYear || !bookImageUrl">Add Book</button>
+    </form> -->
+  <!-- </div> -->
+ <!-- src/app/components/book-add/book-add.component.html -->
+<div class="book-add">
+  <h2>Add a New Book</h2>
+  <form>
+    <label for="title">Title</label>
+    <input type="text" id="title" [(ngModel)]="bookTitle" name="title" required>
+
+    <label for="author">Author</label>
+    <input type="text" id="author" [(ngModel)]="bookAuthor" name="author" required>
+
+    <label for="category">Category</label>
+    <input type="text" id="category" [(ngModel)]="bookCategory" name="category" required>
+
+    <label for="year">Published Year</label>
+    <input type="number" id="year" [(ngModel)]="bookYear" name="year" required>
+
+    <label for="imageUrl">Image URL</label>
+    <input type="text" id="imageUrl" [(ngModel)]="bookImageUrl" name="imageUrl" required>
+
+    <button type="button" (click)="addBook()" [disabled]="!bookTitle || !bookAuthor || !bookCategory || !bookYear || !bookImageUrl">
+      Add Book
+    </button>
+  </form>
+</div>
+
+  
+  

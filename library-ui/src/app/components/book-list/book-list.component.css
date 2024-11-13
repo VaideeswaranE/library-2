@@ -1,0 +1,121 @@
+/* Global Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Styling for the heading */
+.heading {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 36px;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Container for the books */
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid layout */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Book Card Style */
+.book-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+/* Book Image Style */
+.book-image {
+  width: 60%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #f4f4f4;
+}
+
+/* Book Details Style */
+.book-details {
+  padding: 15px;
+}
+
+.book-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.book-author, .book-category, .book-year {
+  font-size: 16px;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+/* Styling for the Borrow Details Button */
+.book-list-container {
+  position: relative;
+}
+
+.borrow-details-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.borrow-details-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Book List Styling */
+.book-list {
+  margin-top: 50px; /* Adjust this as necessary */
+}
+
+/* Styling for Book Author Text */
+.book-author {
+  font-style: italic;
+}
+
+/* Background Color */
+:host {
+  background-color: #f4f4f4;
+  padding: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .heading {
+    font-size: 28px;
+  }
+
+  .book-title {
+    font-size: 18px;
+  }
+
+  .book-author, .book-category, .book-year {
+    font-size: 14px;
+  }
+
+  /* Stack Book Card in Single Column for Smaller Screens */
+  .books-container {
+    grid-template-columns: 1fr;
+  }
+}

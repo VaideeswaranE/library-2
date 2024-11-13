@@ -1,0 +1,45 @@
+<div class="borrower-details-container">
+  <h2>Borrowers List</h2>
+
+  <!-- Borrower cards for visual layout -->
+  <div *ngFor="let borrower of borrowers" class="borrower-card">
+    <div class="borrower-header">
+      <div class="borrower-icon">
+        <span>{{ borrower.name.charAt(0) }}</span> <!-- First letter of the borrower's name -->
+      </div>
+      <h3>{{ borrower.name }}</h3>
+    </div>
+    <div class="borrower-info">
+      <p><strong>Phone:</strong> {{ borrower.phoneNumber }}</p>
+      <p>
+        <strong>Due Date:</strong>
+        <span class="date" [class.overdue]="isOverdue(borrower.dueDate)">
+          {{ borrower.dueDate | date: 'longDate' }}
+        </span>
+      </p>
+    </div>
+  </div>
+
+  <!-- Borrower table for data presentation -->
+  <table *ngIf="borrowers.length > 0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone Number</th>
+        <th>Due Date</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let borrower of borrowers">
+        <td>{{ borrower.name }}</td>
+        <td>{{ borrower.phoneNumber }}</td>
+        <td>{{ borrower.dueDate | date: 'shortDate' }}</td>
+        <td [class.overdue]="isOverdue(borrower.dueDate)">
+          {{ isOverdue(borrower.dueDate) ? 'Overdue' : 'On Time' }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p *ngIf="borrowers.length === 0">No borrowers found.</p> <!-- If no borrowers found -->
+</div>
